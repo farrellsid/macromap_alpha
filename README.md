@@ -26,8 +26,7 @@ You can download the archive via your course’s MarkUs page, Send.UToronto.ca l
 
 ### 1. Clone repo
 ```
-git clone https://github.com/your-username/global-trade-network.git
-cd global-trade-network
+git clone https://github.com/farrellsid/macromap-alpha.git
 ```
 
 ### 2. Build the Docker image
