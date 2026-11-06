@@ -149,7 +149,10 @@ def build_sparse_trade_graph(trade_data: pd.DataFrame, alpha_sig: float = DISP_F
 
     # Use disparity filter to make the graph sparse
     for vertex, data in graph.nodes(data=True):
-        adjacent = list(graph_original[vertex])
+        # fix: using graph_bi instead of graph_original fixes an edge case where,
+        # only one export relation is available between two vertices
+        # which may cause an edge to not be considered as significant
+        adjacent = list(graph_bi[vertex])
         k = len(adjacent)
 
         # If the degree is 1, just connect it
